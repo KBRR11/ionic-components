@@ -1,0 +1,90 @@
+<app-header titulo="date time"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+
+    <ion-list-header>
+      <ion-label>Datos Personales</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      
+        <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+     <ion-icon slot="end" name="calendar-outline"></ion-icon>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
+      <ion-label>Datos de compra</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de entrega</ion-label>
+      
+        <ion-datetime 
+        [value]="fechaActual.toISOString()"
+        display-format="DD MMMM YYYY"
+        (ionChange)="cambioFecha($event)"
+        ></ion-datetime>
+     
+    </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Fecha Min y Máxima</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Min y Max</ion-label>
+    
+      <ion-datetime 
+      display-format="DD MMMM YYYY"
+      min="2018-01-01"
+      max="2023-06-01"
+      ></ion-datetime>
+   
+  </ion-item>
+
+  
+</ion-list>
+
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Fecha en Años</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Min y Max</ion-label>
+    
+      <ion-datetime 
+      display-format="YYYY"
+      min="2018"
+      max="2023"
+      ></ion-datetime>
+   
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Opciones Personalizadas</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>en botones</ion-label>
+    
+      <ion-datetime [pickerOptions]="customPickerOption"
+      display-format="DD MM YYYY"
+      ></ion-datetime>
+   
+  </ion-item>
+
+  
+</ion-list>
+
+
+</ion-content>
